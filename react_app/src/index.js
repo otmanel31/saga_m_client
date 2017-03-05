@@ -14,12 +14,11 @@ import MessagePage from './components/MessagePage'
 const routes = (
   <Router history={browserHistory}>
     <Route path='/' component={App}>
-      <Route path='login/' component={LoginPage} />
-      <Route path='menu/' component={MenuPage}>
-         <Route path='alerts' component={AlertPage}/>
-         <Route path='events' component={EventPage}/>
-         <Route path='message' component={MessagePage}/>
-      </Route>
+      <Route path='login' component={LoginPage} />
+      <Route path='menu' component={MenuPage}/>>
+      <Route path='alerts' component={AlertPage}/>
+      <Route path='events' component={EventPage}/>
+      <Route path='message' component={MessagePage}/>
     </Route>
   </Router>
 )

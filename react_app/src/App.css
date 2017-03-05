@@ -22,3 +22,73 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.AlertNoAck {
+  width: 80%;
+  margin: auto;
+  border: 1px solid red;
+  border-radius: 10px;
+  margin-top:10px;
+}
+
+.AlertAck {
+  width: 80%;
+  margin: auto;
+  border: 1px solid green;
+  border-radius: 10px;
+  margin-top:10px;
+}
+
+.CompleteAlert {
+  border-color:inherit;
+}
+
+.SimpleAlert {
+  min-height: 40px;
+  border-color:inherit;
+  padding-top:10px;
+  font-size: 16px;
+}
+
+.titleAlert {
+  font-size: 16px;
+  border-bottom: 1px dotted;
+  border-color : inherit;
+  height: 30px;
+  padding-top: 10px;
+  font-weight: bold;
+}
+
+.bodyAlert {
+  font-size: 15px;
+  min-height: 75px;
+  padding: 10px;
+  text-align: justify;
+}
+
+.ButtonAlertLeft {
+  border: 1px;
+  width : 50%;
+  height: 40px;
+  border-radius: 0px 0px 0px 10px;
+  border-top: 1px solid currentcolor;
+  border-right: 1px solid currentcolor;
+  border-color:inherit;
+}
+
+.ButtonAlertRight {
+  border: 1px;
+  width : 50%;
+  height: 40px;
+  border-radius: 0px 0px 10px 0px;
+  border-top: 1px solid currentcolor;
+  border-color:inherit;
+}
+
+.ButtonAlertLeft:hover {
+ background-color : cornflowerblue;
+}
+
+.ButtonAlertRight:hover {
+ background-color : cornflowerblue;
+}
