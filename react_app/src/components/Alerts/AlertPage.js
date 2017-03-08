@@ -2,6 +2,7 @@ import React from 'react';
 import Alert from './Alert'
 import { fetchApiAlert } from './action'
 import { connect } from 'react-redux'
+import './Alerts.css'
 
 
 class AlertPage extends React.Component {
