@@ -8,7 +8,7 @@
     },
     "installed_plugins": {
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "io.onsen.weather"
+            "PACKAGE_NAME": "com.saga.m"
         }
     },
     "dependent_plugins": {}
