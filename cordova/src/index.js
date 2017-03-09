@@ -4,7 +4,7 @@ import App from './App';
 
 import './index.css';
 
-import {Router, Route, browserHistory} from 'react-router';
+import {Router, Route, hashHistory} from 'react-router';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 
@@ -20,6 +20,8 @@ import AlertPage from './components/Alerts/AlertPage'
 import EventPage from './components/EventPage'
 import MessagePage from './components/MessagePage'
 
+import SimpleAlert from './components/Alerts/SimpleAlert'
+
 const reducers = combineReducers({
   alerts : alertsReducer
 })
@@ -31,7 +33,7 @@ const store = createStore(
 
 const routes = (
   <Provider store={store}>
-    <Router history={browserHistory}>
+    <Router history={hashHistory}>
       <Route path='/' component={App}>
         <Route path='login' component={LoginPage} />
         <Route path='menu' component={MenuPage}/>
@@ -44,6 +46,6 @@ const routes = (
 )
 
 ReactDOM.render(
-  <h1>TOTO</h1>,
+  routes,
   document.getElementById('root')
 );
