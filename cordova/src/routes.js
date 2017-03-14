@@ -3,10 +3,10 @@ import auth from './lib/authentication.js'
 
 import App from './App'
 import LoginPage from './components/LoginPage'
-import MenuPage from './components/MenuPage'
+import MenuPage from './components/Menu/MenuPage'
 import EventPage from './components/EventPage'
 import MessagePage from './components/MessagePage'
-import AlertPage from './components/AlertPage'
+import AlertPage from './components/Alerts/AlertPage'
 
 
 function redirectToLogin(nextState, replace) {
@@ -43,19 +43,19 @@ export default {
 
         // ALERTS
         {
-          path: '/alerts',
+          path: 'alerts',
           component: AlertPage
         },
 
         // MESSAGE
         {
-          path: '/message',
+          path: 'message',
           component: MessagePage
         },
 
         // EVENTS
         {
-          path: '/events',
+          path: 'events',
           component: EventPage
         }
       ]

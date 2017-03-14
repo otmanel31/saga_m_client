@@ -4,7 +4,7 @@ import { Link } from 'react-router'
 
 class MenuPage extends React.Component {
     render() {
-        return(<div>
+        return(<div className="menu">
             <Link to={'/alerts'}>
                 <ButtonMenu texte={"ALERTS"}/>
             </Link>

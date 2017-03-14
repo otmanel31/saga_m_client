@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 import './App.css';
-import { Link } from 'react-router'
 
 class App extends Component {
   render() {
@@ -9,12 +9,8 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <h2>SAGA</h2>
-        </div>
-        <div>
-            <Link to={'/menu'}>
-                <div>Menu</div>
-            </Link>
-           {children}
+          <Link to="/menu">MENU</Link>
+          {children}
         </div>
       </div>
     );

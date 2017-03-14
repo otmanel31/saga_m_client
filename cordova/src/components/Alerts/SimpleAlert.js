@@ -1,5 +1,4 @@
 import React from 'react';
-import './Alerts.css'
 
 class SimpleAlert extends React.Component {
     render () {
