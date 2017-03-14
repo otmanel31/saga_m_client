@@ -5,7 +5,7 @@ import App from './App';
 import './index.css';
 import routes from './routes'
 
-import { Router, browserHistory } from 'react-router';
+import { Router, hashHistory } from 'react-router';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 
@@ -27,7 +27,7 @@ const store = createStore(
 ReactDOM.render(
   <Provider store={store}>
     <Router
-      history={browserHistory}
+      history={hashHistory}
       routes={routes} />
   </Provider>,
   document.getElementById('root')
