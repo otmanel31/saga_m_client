@@ -11,7 +11,7 @@ import { Provider } from 'react-redux';
 
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-import { reducer as alertsReducer } from './components/Alerts/reducer'
+import { reducer as alertsReducer } from './modules/Alerts/reducer'
 
 import apiMiddleware from './middleware/api'
 

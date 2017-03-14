@@ -2,11 +2,11 @@ import React from 'react'
 import auth from './lib/authentication.js'
 
 import App from './App'
-import LoginPage from './components/LoginPage'
-import MenuPage from './components/Menu/MenuPage'
-import EventPage from './components/EventPage'
-import MessagePage from './components/MessagePage'
-import AlertPage from './components/Alerts/AlertPage'
+import LoginPage from './modules/LoginPage'
+import MenuPage from './modules/Menu/MenuPage'
+import EventPage from './modules/EventPage'
+import MessagePage from './modules/MessagePage'
+import AlertPage from './modules/Alerts/AlertPage'
 
 
 function redirectToLogin(nextState, replace) {

@@ -1,7 +1,7 @@
 {
   "name": "react-onsenui-redux-weather",
   "version": "1.0.0",
-  "description": "Simple Weather App implemntation with Onsen UI React Components and Redux",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --host localhost --port 4000 --content-base www/",
