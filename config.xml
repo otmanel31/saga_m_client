@@ -24,4 +24,5 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <hook src="scripts/build.sh" type="before_prepare" />
+    <plugin name="cordova-plugin-firebase" spec="~0.1.19" />
 </widget>

@@ -10,7 +10,9 @@ class App extends Component {
         <div className="App-header">
           <h2>SAGA</h2>
           <Link to="/menu">MENU</Link>
-          {children}
+        </div>
+        <div>
+            {children}
         </div>
       </div>
     );

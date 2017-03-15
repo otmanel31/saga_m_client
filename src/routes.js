@@ -6,7 +6,7 @@ import LoginPage from './modules/LoginPage'
 import MenuPage from './modules/Menu/MenuPage'
 import EventPage from './modules/EventPage'
 import MessagePage from './modules/MessagePage'
-import AlertPage from './modules/Alerts/AlertPage'
+import AlertPage from './modules/Alerts'
 
 
 function redirectToLogin(nextState, replace) {

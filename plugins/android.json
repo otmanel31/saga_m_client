@@ -9,6 +9,9 @@
     "installed_plugins": {
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.saga.m"
+        },
+        "cordova-plugin-firebase": {
+            "PACKAGE_NAME": "com.saga.m"
         }
     },
     "dependent_plugins": {}

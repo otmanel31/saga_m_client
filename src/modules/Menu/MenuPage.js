@@ -16,6 +16,7 @@ class MenuPage extends React.Component {
             <Link to={'/messages'}>
                 <ButtonMenu texte={"MESSAGES"}/>
             </Link>
+
         </div>)
     }
 }

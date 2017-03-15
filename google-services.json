@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "14406973762",
+    "firebase_url": "https://saga-m.firebaseio.com",
+    "project_id": "saga-m",
+    "storage_bucket": "saga-m.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:14406973762:android:9c974e58f22aa611",
+        "android_client_info": {
+          "package_name": "com.example.hello"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "14406973762-12vgr4nk6hb0m6cv0pcadaabd30l5eng.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBX8WL4vmm1dhwwrHpzurdjUsgH0EmKnQI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
