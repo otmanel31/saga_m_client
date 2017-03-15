@@ -2,7 +2,7 @@ import React from 'react'
 import auth from './lib/authentication.js'
 
 import App from './App'
-import LoginPage from './modules/LoginPage'
+import LoginPage from './modules/Login/LoginPage'
 import MenuPage from './modules/Menu/MenuPage'
 import EventPage from './modules/EventPage'
 import MessagePage from './modules/MessagePage'
