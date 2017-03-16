@@ -64920,6 +64920,8 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	var _reactOnsenui = __webpack_require__(240);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -64932,9 +64934,21 @@
 	    _inherits(SettingPage, _React$Component);
 	
 	    function SettingPage() {
+	        var _ref;
+	
+	        var _temp, _this, _ret;
+	
 	        _classCallCheck(this, SettingPage);
 	
-	        return _possibleConstructorReturn(this, (SettingPage.__proto__ || Object.getPrototypeOf(SettingPage)).apply(this, arguments));
+	        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	            args[_key] = arguments[_key];
+	        }
+	
+	        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = SettingPage.__proto__ || Object.getPrototypeOf(SettingPage)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+	            checked: false
+	        }, _this.handleChange = function (e) {
+	            _this.setState({ checked: e.target.checked });
+	        }, _temp), _possibleConstructorReturn(_this, _ret);
 	    }
 	
 	    _createClass(SettingPage, [{
@@ -64943,7 +64957,13 @@
 	            return _react2.default.createElement(
 	                'div',
 	                null,
-	                'SETTING'
+	                _react2.default.createElement(
+	                    'p',
+	                    null,
+	                    ' ',
+	                    this.state.checked ? 'GPS position send every second' : 'GPS position disable'
+	                ),
+	                _react2.default.createElement(_reactOnsenui.Switch, { checked: this.state.checked, onChange: this.handleChange })
 	            );
 	        }
 	    }]);
@@ -65126,8 +65146,8 @@
 	            };
 	
 	            var toFetch = function toFetch(url) {
-	                var baseUrl = 'http://10.0.2.2:8080/'; //--> pour emulateur android
-	                //const baseUrl = 'http://localhost:8080/' // --> Pour browser
+	                //const baseUrl = 'http://10.0.2.2:8080/' //--> pour emulateur android
+	                var baseUrl = 'http://localhost:8080/'; // --> Pour browser
 	                return fetch(baseUrl + url, myInit);
 	            };
 	

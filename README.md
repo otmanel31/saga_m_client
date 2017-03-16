@@ -6,10 +6,10 @@ To run it simply do:
 npm install
 ```
 
-Add a platform to run it on a device or emulator. For Android:
+Add a platform and plugins to run it on a device or emulator. For Android:
 
 ```
-cordova platform add android
+cordova prepare
 cordova run android
 ```
 
