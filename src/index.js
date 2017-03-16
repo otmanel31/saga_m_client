@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import App from './modules/App/App';
 
 import './index.css';
 // Onsen UI Styling and Icons
@@ -49,4 +49,5 @@ function getToken() {
     }, function(error) {
         console.error(error);
     });
+
 }

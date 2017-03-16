@@ -3,7 +3,18 @@ import ButtonMenu from './ButtonMenu'
 import { Link } from 'react-router'
 
 class MenuPage extends React.Component {
+    renderTabs = () => {
+        return [
+                    {
+                        content: <SettingsPage />,
+                        tab: <Tab label='Settings' icon='md-settings' />
+                    }
+                ]
+    }
+
+
     render() {
+
         return(<div className="menu">
             <Link to={'/alerts'}>
                 <ButtonMenu texte={"ALERTS"}/>

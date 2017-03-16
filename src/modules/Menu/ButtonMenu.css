@@ -1,15 +1,19 @@
 .ButtonMenu {
-    width : 50%;
-    height : 100px;
-    background-color:cornflowerblue;
+    width : 80%;
+    height: 100px;
+    background-color:lightblue;
     margin : auto;
-    margin-top: 10px;
+    margin-bottom: 10px;
     text-align: center;
-    border-radius: 20px;
-    font-size: 30px;
-
+    border-radius: 5px;
+    font-size: 40px;
+    box-shadow: 0px 1px 2px 0px #6665cd; 
 }
 
 a ButtonMenu {
     text-decoration: none;
+}
+
+.menu {
+    margin-top: 20px;
 }

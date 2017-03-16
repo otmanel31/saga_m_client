@@ -8,8 +8,9 @@ import './Alerts.css'
 
 class Alert extends React.Component {
     state = {
-        flag_display : false,
-        iconAlert    : 'ion-email-unread',
+        flag_display  : false,
+        iconAlert     : 'ion-email-unread',
+        iconAlertColor: 'AlertNok'
     }
 
     showAlertDialog = () => {
@@ -27,6 +28,7 @@ class Alert extends React.Component {
 
     sendAckChangeColor = () => {
         this.setState({iconAlert : 'ion-email'})
+        this.setState({iconAlertColor : 'AlertOk'})
         const { dispatch, alert } = this.props;
         dispatch(ackApiAlert(alert._id))
         this.hideAlertDialog()
@@ -35,8 +37,10 @@ class Alert extends React.Component {
     componentDidMount(){
         if(this.props.alert.ack){
             this.setState({iconAlert : 'ion-email'})
+            this.setState({iconAlertColor : 'AlertOk'})
         } else {
             this.setState({iconAlert : 'ion-email-unread'})
+            this.setState({iconAlertColor : 'AlertNok'})
         }
     }
 
@@ -50,12 +54,11 @@ class Alert extends React.Component {
                         <div  className='Alert'>
                             <strong>{alert.title}</strong>
                         </div>
-                        <div className='left'>
-                            <Icon icon={this.state.iconAlert} size={30}/>
+                        <div className={'left'}>
+                            <Icon className={this.state.iconAlertColor} icon={this.state.iconAlert} size={30} />
                         </div>
                      </ListItem>
-                    
-
+      
                     <Dialog
                             isOpen={this.state.flag_display}
                             isCancelable={true}>

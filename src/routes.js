@@ -1,12 +1,13 @@
 import React from 'react'
 import auth from './lib/authentication.js'
 
-import App from './App'
+import App from './modules/App/App'
 import LoginPage from './modules/Login/LoginPage'
 import MenuPage from './modules/Menu/MenuPage'
 import EventPage from './modules/EventPage'
 import MessagePage from './modules/MessagePage'
 import AlertPage from './modules/Alerts'
+import Settings from './modules/Settings'
 
 
 function redirectToLogin(nextState, replace) {
@@ -57,7 +58,14 @@ export default {
         {
           path: 'events',
           component: EventPage
+        },
+
+        // SETTINGS
+        {
+          path: 'settings',
+          component: Settings
         }
+        
       ]
     }
   ]
