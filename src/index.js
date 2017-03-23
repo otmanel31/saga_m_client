@@ -7,9 +7,11 @@ import './index.css';
 import 'onsenui/css/onsenui.css';
 import 'onsenui/css/onsen-css-components.css';
 
-import routes from './routes'
+import createRoutes from './routes'
 
 import { Router, hashHistory } from 'react-router';
+import { syncHistoryWithStore } from 'react-router-redux'
+import { routerReducer as routing } from 'react-router-redux'
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 
@@ -22,7 +24,8 @@ import apiMiddleware from './middleware/api'
 
 const reducers = combineReducers({
   alerts: alertsReducer,
-  auth: loginReducer
+  auth: loginReducer,
+  routing
 })
 
 const store = createStore(
@@ -30,11 +33,12 @@ const store = createStore(
     applyMiddleware(apiMiddleware))
 );
 
+const history = syncHistoryWithStore(hashHistory, store)
+const routes = createRoutes(store)
+
 ReactDOM.render(
   <Provider store={store}>
-    <Router
-      history={hashHistory}
-      routes={routes} />
+    <Router history={history} routes={routes} />
   </Provider>,
   document.getElementById('root')
 );
