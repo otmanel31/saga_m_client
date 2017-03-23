@@ -1,4 +1,4 @@
-import { pushState } from 'redux-router';
+import { push } from 'react-router-redux';
 import { checkHttpStatus, parseJSON } from '../../lib/utils'
 
 export const LOGIN = '@alerts/LOGIN'
@@ -37,7 +37,7 @@ export function loginRequest() {
 export function login(email, password, redirect="/") {
     return function(dispatch) {
         dispatch(loginRequest());
-        return fetch('http://localhost:000/auth/getToken/', {
+        return fetch('http://localhost:4000/auth/getToken/', {
             method: 'post',
             credentials: 'include',
             headers: {
@@ -52,7 +52,7 @@ export function login(email, password, redirect="/") {
                 try {
                     let decoded = jwtDecode(response.token);
                     dispatch(loginSuccess(response.token));
-                    dispatch(pushState(null, redirect));
+                    dispatch(push(null, redirect));
                 } catch (e) {
                     dispatch(loginError({
                         response: {
