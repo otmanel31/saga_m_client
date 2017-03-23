@@ -23,10 +23,11 @@ const api = store => next => action => {
 
     let myInit = {
         method: action.method,
-        headers: myHeaders
+        headers: myHeaders,
+        body: action.body
     }
 
-    const toFetch = (url) => {
+    const toFetch = (url, options = {}) => {
         //const baseUrl = 'http://10.0.2.2:8080/' //--> pour emulateur android
         const baseUrl = 'http://localhost:8080/' // --> Pour browser
         return fetch(baseUrl + url, myInit)
