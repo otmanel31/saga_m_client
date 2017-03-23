@@ -12,6 +12,7 @@ export default (store) => {
 
   function redirectToLogin(nextState, replace) {
     const { auth: { isAuthenticated }} = store.getState()
+  //TODO Test localStorage existing token validity
     if (!isAuthenticated) {
       replace({
         pathname: '/login',

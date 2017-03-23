@@ -18,10 +18,10 @@ export const reducer = (state = initialState, payload) => {
         case LOGIN_START:
             return {
                 ...state,
-                token: payload.token,
-                userName: payload.userName,
-                isAuthenticated: true,
-                isAuthenticating: false,
+                token: null,
+                userName: null,
+                isAuthenticated: false,
+                isAuthenticating: true,
                 statusText: null
             }        
         case LOGIN_SUCCESS:
@@ -41,7 +41,7 @@ export const reducer = (state = initialState, payload) => {
                 userName: null,               
                 isAuthenticated: false,
                 isAuthenticating: false,
-                statusText: `Authentication Error: ${payload.status} ${payload.statusText}`                
+                statusText: ('Authentication Error:' + payload.status + ', ' + payload.statusText)
             }
         default: return state
     }
