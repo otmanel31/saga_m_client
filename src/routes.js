@@ -26,10 +26,6 @@ export default (store) => {
     component: App,
     childRoutes: [
       {
-        path: 'test',
-        component: <h2>Test</h2>
-      },
-      {
         path: 'login',
         component: LoginPage
       },
