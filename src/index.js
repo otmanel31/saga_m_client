@@ -18,13 +18,13 @@ import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import { reducer as alertsReducer } from './modules/Alerts/reducer'
-import { reducer as loginReducer } from './modules/Login/reducer'
+import { reducer as auth } from './modules/Login/reducer'
 
 import apiMiddleware from './middleware/api'
 
 const reducers = combineReducers({
   alerts: alertsReducer,
-  auth: loginReducer,
+  auth,
   routing
 })
 

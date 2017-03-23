@@ -1,5 +1,4 @@
 import React from 'react'
-import auth from './lib/authentication.js'
 
 import App from './modules/App/App'
 import LoginPage from './modules/Login/LoginPage'
@@ -12,7 +11,8 @@ import Settings from './modules/Settings'
 export default (store) => {
 
   function redirectToLogin(nextState, replace) {
-    if (!auth.loggedIn()) {
+    const { auth: { isAuthenticated }} = store.getState()
+    if (!isAuthenticated) {
       replace({
         pathname: '/login',
         state: { nextPathname: nextState.location.pathname }
