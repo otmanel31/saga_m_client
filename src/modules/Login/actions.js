@@ -33,7 +33,7 @@ export function loginRequest() {
 export function login(email, password, redirect = "/") {
     return function (dispatch) {
         dispatch(loginRequest())
-        return fetch('http://localhost:4000/auth/getToken/', {
+        return fetch('http://localhost:4000/authentication', {
             method: 'post',
             credentials: 'include',
             headers: {
