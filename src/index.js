@@ -63,5 +63,6 @@ function getToken() {
   }, function (error) {
     console.error(error);
   });
+}
 
 

@@ -1,5 +1,6 @@
 import { push } from 'react-router-redux'
 import { checkHttpStatus, parseJSON } from '../../lib/utils'
+import { baseURL } from './../../config/api'
 
 export const LOGIN = '@alerts/LOGIN'
 
@@ -33,7 +34,7 @@ export function loginRequest() {
 export function login(name, password, redirect = "/") {
     return function (dispatch) {
         dispatch(loginRequest())
-        return fetch('http://localhost:8080/authenticate', {
+        return fetch(`${baseURL}authenticate`, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
