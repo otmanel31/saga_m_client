@@ -1,25 +1,32 @@
 import React from 'react'
 import { Switch } from 'react-onsenui'
+import { setGPS } from './action'
+import { connect } from 'react-redux'
 
 class SettingPage extends React.Component {
-    state = {
-        checked : false
-    }
 
     handleChange = (e) => {
-      this.setState({checked: e.target.checked});
+      const { dispatch } = this.props;
+      dispatch(setGPS(e.target.checked))
     }
 
 
+    
     render(){
         return (
             <div>
-                <p> {this.state.checked ? 'GPS position send every second' : 'GPS position disable'}</p>
-                <Switch checked={this.state.checked} onChange={this.handleChange}/>
-
+                <p> {this.props.onGPS ? 'GPS position sent every five second' : 'GPS position disable'}</p>
+                <Switch checked={this.props.onGPS} onChange={this.handleChange}/>
             </div>
         )
     }
 }
 
-export default SettingPage
+export default connect((state) => ({
+    onGPS : state.settings.onGPS
+}))(SettingPage)
+
+
+
+   
+

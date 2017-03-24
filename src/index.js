@@ -17,12 +17,14 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 import { reducer as alertsReducer } from './modules/Alerts/reducer'
 import { reducer as loginReducer } from './modules/Login/reducer'
+import { reducer as settingsReducer } from './modules/Settings/reducer'
 
 import apiMiddleware from './middleware/api'
 
 const reducers = combineReducers({
   alerts: alertsReducer,
-  auth: loginReducer
+  auth: loginReducer,
+  settings : settingsReducer,
 })
 
 const store = createStore(
@@ -40,6 +42,7 @@ ReactDOM.render(
 );
 
 document.addEventListener('deviceready', getToken, false);
+//document.addEventListener('deviceready', startGPS, false);
 
 function getToken() {
     console.log("START :::::::::::::::::::: !!!!!!!")
@@ -49,5 +52,6 @@ function getToken() {
     }, function(error) {
         console.error(error);
     });
-
 }
+
+
