@@ -46,5 +46,13 @@ module.exports = {
 
     postcss: function() {
         return [autoprefixer];
-    }
+    },
+
+    plugins: [
+        new webpack.DefinePlugin({
+            'process.env': {
+                'DEV_MODE': JSON.stringify(process.env.DEV_MODE)
+            }
+        })
+    ]
 };
