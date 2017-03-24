@@ -1,5 +1,6 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { connect } from 'react-redux'
 import { login } from './actions'
 import { push } from 'react-router-redux'
 
@@ -7,7 +8,10 @@ class LoginPage extends React.Component {
 
     handleLoginRequest = (event) => {
         event.preventDefault()
+        
         const { location, dispatch } = this.props
+        const name = ReactDOM.findDOMNode(this.refs.name).value;
+        const password = ReactDOM.findDOMNode(this.refs.password).value;
 
         // Manage redirection after success
         let redirect = '/'
@@ -16,14 +20,14 @@ class LoginPage extends React.Component {
         }
 
         // Dispatch login request
-        dispatch(login(event.target.email, event.target.password, redirect))
+        dispatch(login(name, password, redirect))
     }
     render() {
         return (
             <div>
                 <form onSubmit={this.handleLoginRequest}>
-                    <label><input ref="email" placeholder="email" defaultValue="joe@example.com" /></label>
-                    <label><input ref="password" placeholder="password" /></label> (hint: password1)<br />
+                    <label><input ref="name" placeholder="name" defaultValue="foo" /></label>
+                    <label><input ref="password" placeholder="password" /></label> (hint: bar)<br />
                     <button type="submit">login</button>
                 </form>
                 {this.props.statusText && <div>{this.props.statusText}</div>}

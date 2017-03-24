@@ -30,17 +30,16 @@ export function loginRequest() {
     }
 }
 
-export function login(email, password, redirect = "/") {
+export function login(name, password, redirect = "/") {
     return function (dispatch) {
         dispatch(loginRequest())
-        return fetch('http://localhost:4000/authentication', {
-            method: 'post',
-            credentials: 'include',
+        return fetch('http://localhost:8080/authenticate', {
+            method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ email: email, password: password })
+            body: JSON.stringify({ name: name, password: password })
         })
             .then(checkHttpStatus)
             .then(parseJSON)
