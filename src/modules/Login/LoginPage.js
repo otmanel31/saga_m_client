@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom'
 import { connect } from 'react-redux'
 import { login } from './actions'
 import { push } from 'react-router-redux'
+import { Input, Button} from 'react-onsenui' 
+import './login.css'
 
 class LoginPage extends React.Component {
 
@@ -24,11 +26,18 @@ class LoginPage extends React.Component {
     }
     render() {
         return (
-            <div>
-                <form onSubmit={this.handleLoginRequest}>
-                    <label><input ref="name" placeholder="name" defaultValue="foo" /></label>
-                    <label><input ref="password" placeholder="password" /></label> (hint: bar)<br />
-                    <button type="submit">login</button>
+            <div className='formlogin'>
+                <form>
+                    <p>
+                        <label className='left'><Input className='center' ref="name" placeholder="name" modifier='underbar material' float value="foo" /></label>
+                    </p>
+                    <p>
+                        <label className='left'><Input className='center' ref="password" placeholder="password" modifier='underbar material'  float /></label>
+                    </p>
+                    <p>
+                        (hint: bar)<br />
+                    </p>
+                    <Button  className='center' onClick={this.handleLoginRequest}>login</Button>
                 </form>
                 {this.props.statusText && <div>{this.props.statusText}</div>}
             </div>
