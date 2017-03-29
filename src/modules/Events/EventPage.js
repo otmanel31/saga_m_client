@@ -59,6 +59,12 @@ class EventPage extends React.Component{
         reader.readAsDataURL(value)
     }
 
+    handleCam = ()=>{
+        //alert('CAMERA')
+        navigator.camera.getPicture()
+        //navigator.camera.getPicture(onsucces, onFail, {destinationType:Camera.DestinationType.FILE_URI, sourceType:Camera.PictureSourceType.CAMERA})
+    }
+
     render(){
         // injecte contenu du store 
         const {results} = this.props
@@ -110,9 +116,9 @@ class EventPage extends React.Component{
                     </div>
                   
                     <span id='preview' ref={(r) => this.span = r} ></span><br/>
-
-                    {$imagePreview}
+                        {$imagePreview}
                     <br />
+                    <Button id='myCam' onClick={this.handleCam} ><Icon>Cam</Icon></Button>
                     <Row>
                         <Col s={12}>
                             <Button waves='light' type='submit'><Icon>Envoyer</Icon></Button><br/>
