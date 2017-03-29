@@ -25,7 +25,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 
 import { composeWithDevTools } from 'redux-devtools-extension';
-import { thunk } from 'redux-thunk'
+import  thunk  from 'redux-thunk'
 
 import { reducer as alertsReducer } from './modules/Alerts/reducer'
 //import { reducer as loginReducer } from './modules/Login/reducer'
