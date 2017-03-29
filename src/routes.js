@@ -11,8 +11,8 @@ import Settings from './modules/Settings'
 export default (store) => {
 
   function redirectToLogin(nextState, replace) {
-    const { auth: { isAuthenticated }} = store.getState()
-  //TODO Test localStorage existing token validity
+    const { auth: { isAuthenticated } } = store.getState()
+    //TODO Test localStorage existing token validity
     if (!isAuthenticated) {
       replace({
         pathname: '/login',
@@ -30,16 +30,13 @@ export default (store) => {
         component: LoginPage
       },
       {
+        // Protected routes
         onEnter: redirectToLogin,
+        // MENU
+        indexRoute: {
+          component: MenuPage
+        },
         childRoutes: [
-          // Protected routes
-
-          // MENU
-          {
-            path: 'menu',
-            component: MenuPage
-          },
-
           // ALERTS
           {
             path: 'alerts',

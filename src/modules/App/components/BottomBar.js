@@ -9,7 +9,7 @@ class BottomBar extends React.Component {
          <BottomToolbar modifier='BarBottom'> 
              <div className='container'>
 
-                <Link to="/menu">
+                <Link to="/">
                     <Icon icon='md-home' size={30}></Icon>
                 </Link>
 
