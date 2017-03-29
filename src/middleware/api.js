@@ -32,15 +32,16 @@ const api = store => next => action => {
         headers: myHeaders,
         body: action.body
     }
-/* const toFetch = (url, options = {}) => {
+    console.log('my init', myInit)
+    /*const toFetch = (url, options = {}) => {
         //const baseUrl = 'http://10.0.2.2:8080/' //--> pour emulateur android
         const baseUrl = 'http://127.0.0.1:8080/' // --> Pour browser
         return fetch( baseUrl + url, myInit)
-        body: JSON.stringify(action.body),
     }*/
 
     const toFetch = (url) => {
-        return fetch(baseURL + url, myInit)
+        const baseUrl = 'http://127.0.0.1:8080/'
+        return fetch(baseUrl + url, myInit)
     }
 
     promise(toFetch)
@@ -55,7 +56,7 @@ const api = store => next => action => {
                     })
                 } else { // other method
                     dispatch({
-                        type: SUCCESS,
+                        type: SUCCESS
                     })
                 }
 

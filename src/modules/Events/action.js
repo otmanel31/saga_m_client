@@ -16,6 +16,7 @@ export const sendForm = (type, text, img) => (dispatch) => {
     form_data.append('type', type)
     form_data.append('text_event', text)
     form_data.append('file', img)
+    console.log(form_data)
     return dispatch({
         type: 'api',
         method: 'post',
@@ -24,3 +25,19 @@ export const sendForm = (type, text, img) => (dispatch) => {
         promise: (apiClient) => apiClient('events')
     })
 }
+/*export const sendForm = (type, text, img) => (dispatch) => {
+ // construit formatata    
+    let t = {}
+    t["type"] = type
+    t['tex_event'] = text
+    t['file'] = img
+    
+    console.log("my t", t)
+    return dispatch({
+        type: 'api',
+        method: 'POST',
+        body: t,
+        types: [FETCH_START, FETCH_SUCCESS, FETCH_ERROR],
+        promise: (apiClient) => apiClient('events')
+    })
+}*/
