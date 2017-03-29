@@ -58,6 +58,11 @@ class EventPage extends React.Component{
         }
         reader.readAsDataURL(value)
     }
+    handleCam = ()=>{
+        alert(navigator.geolocation.getCurrentPosition())
+        //alert(navigator.camera)
+        //navigator.camera.getPicture(onsucces, onFail, {destinationType:Camera.DestinationType.FILE_URI, sourceType:Camera.PictureSourceType.CAMERA})
+    }
 
     render(){
         // injecte contenu du store 
@@ -108,11 +113,12 @@ class EventPage extends React.Component{
                             <input className="file-path validate" type="text" placeholder="Upload file" />
                         </div>
                     </div>
-                  
+                    
                     <span id='preview' ref={(r) => this.span = r} ></span><br/>
 
                     {$imagePreview}
                     <br />
+                    <button onClick={this.handleCam}>Camera</button><br/>
                     <Row>
                         <Col s={12}>
                             <Button waves='light' type='submit'><Icon>Envoyer</Icon></Button><br/>
