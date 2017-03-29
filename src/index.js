@@ -7,6 +7,12 @@ import './index.css';
 import 'onsenui/css/onsenui.css';
 import 'onsenui/css/onsen-css-components.css';
 
+//MATERIALIZE
+//import 'materialize-css/css/ghpages-materialize.css'
+//import 'materialize-css/js'
+import 'materialize-css/bin/materialize.css'
+import 'materialize-css/bin/materialize.js'
+
 import routes from './routes'
 
 import { Router, hashHistory } from 'react-router';
@@ -17,17 +23,21 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 import { reducer as alertsReducer } from './modules/Alerts/reducer'
 import { reducer as loginReducer } from './modules/Login/reducer'
+import { reducer as eventReducer } from './modules/Events/reducer'
+import thunk from 'redux-thunk'
+
 
 import apiMiddleware from './middleware/api'
 
 const reducers = combineReducers({
+  events: eventReducer,
   alerts: alertsReducer,
   auth: loginReducer
 })
 
 const store = createStore(
   reducers, composeWithDevTools(
-    applyMiddleware(apiMiddleware))
+    applyMiddleware(thunk, apiMiddleware))
 );
 
 ReactDOM.render(

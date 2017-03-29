@@ -47,6 +47,9 @@
     "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {
-    "redux-router": "^2.1.2"
+    "materialize-css": "^0.98.1",
+    "react-materialize": "^0.18.1",
+    "redux-router": "^2.1.2",
+    "redux-thunk": "^2.2.0"
   }
 }

@@ -16,7 +16,7 @@ const api = store => next => action => {
     //********************************/
     // For test
     //********************************/
-    var Token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyIkX18iOnsic3RyaWN0TW9kZSI6dHJ1ZSwiZ2V0dGVycyI6e30sIndhc1BvcHVsYXRlZCI6ZmFsc2UsImFjdGl2ZVBhdGhzIjp7InBhdGhzIjp7Il9fdiI6ImluaXQiLCJ0b2tlbkdDTSI6ImluaXQiLCJhZG1pbiI6ImluaXQiLCJwYXNzd29yZCI6ImluaXQiLCJuYW1lIjoiaW5pdCIsIl9pZCI6ImluaXQifSwic3RhdGVzIjp7Imlnbm9yZSI6e30sImRlZmF1bHQiOnt9LCJpbml0Ijp7Il9fdiI6dHJ1ZSwidG9rZW5HQ00iOnRydWUsImFkbWluIjp0cnVlLCJwYXNzd29yZCI6dHJ1ZSwibmFtZSI6dHJ1ZSwiX2lkIjp0cnVlfSwibW9kaWZ5Ijp7fSwicmVxdWlyZSI6e319LCJzdGF0ZU5hbWVzIjpbInJlcXVpcmUiLCJtb2RpZnkiLCJpbml0IiwiZGVmYXVsdCIsImlnbm9yZSJdfSwiZW1pdHRlciI6eyJkb21haW4iOm51bGwsIl9ldmVudHMiOnt9LCJfZXZlbnRzQ291bnQiOjAsIl9tYXhMaXN0ZW5lcnMiOjB9fSwiaXNOZXciOmZhbHNlLCJfZG9jIjp7Il9fdiI6MCwidG9rZW5HQ00iOiJkQ1h1bzNfZmFzTTpBUEE5MWJIRkVKNDhWU2ZoMFZ1T25XSWRzdVY3ZVRKWnFuRE1paDVjZ2dVelh0TXpzVkhMWHVTTDh5V3dWTE5iaUpvdVdTd3NoTmpuZDJWdUhrcEt1R2dVTTF1c1ZxZEp5T1FHLXdJOGFUOGthWUJuZEtPZlhTb0RnSlhxM19oNnFLN2p5RjA1VVZYcSIsImFkbWluIjpmYWxzZSwicGFzc3dvcmQiOiJwYXNzd29yZCIsIm5hbWUiOiJCYXIiLCJfaWQiOiI1OGFmMDg3ZGYyYmE3MDRhNjZkZTM0MjUifSwiaWF0IjoxNDg5NTkxODM4LCJleHAiOjE0OTA0NTU4Mzh9.x5JQ5MfQsLUVWwwFsYVzRJi86882pWP2KPi2tIn--R8"
+    var Token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyIkX18iOnsic3RyaWN0TW9kZSI6dHJ1ZSwiZ2V0dGVycyI6e30sIndhc1BvcHVsYXRlZCI6ZmFsc2UsImFjdGl2ZVBhdGhzIjp7InBhdGhzIjp7InRva2VuR0NNIjoiaW5pdCIsImFkbWluIjoiaW5pdCIsInBhc3N3b3JkIjoiaW5pdCIsIm5hbWUiOiJpbml0IiwiX2lkIjoiaW5pdCJ9LCJzdGF0ZXMiOnsiaWdub3JlIjp7fSwiZGVmYXVsdCI6e30sImluaXQiOnsidG9rZW5HQ00iOnRydWUsImFkbWluIjp0cnVlLCJwYXNzd29yZCI6dHJ1ZSwibmFtZSI6dHJ1ZSwiX2lkIjp0cnVlfSwibW9kaWZ5Ijp7fSwicmVxdWlyZSI6e319LCJzdGF0ZU5hbWVzIjpbInJlcXVpcmUiLCJtb2RpZnkiLCJpbml0IiwiZGVmYXVsdCIsImlnbm9yZSJdfSwiZW1pdHRlciI6eyJkb21haW4iOm51bGwsIl9ldmVudHMiOnt9LCJfZXZlbnRzQ291bnQiOjAsIl9tYXhMaXN0ZW5lcnMiOjB9fSwiaXNOZXciOmZhbHNlLCJfZG9jIjp7InRva2VuR0NNIjoiIiwiYWRtaW4iOmZhbHNlLCJwYXNzd29yZCI6InBhc3N3b3JkIiwibmFtZSI6IkJhciIsIl9pZCI6IjU4ZDNhNzc5ZTkyMGNlYmYxOTkwOTc2OSJ9LCJpYXQiOjE0OTAyNjcxNjcsImV4cCI6MTQ5MDM1MzU2N30.07VFYR18Ko2B-GUy4rLy-E5PjAh2VsZx1m7ZJzW4ZQU"
 
     const myHeaders = new Headers();
     myHeaders.append('Authorization', "Bearer " + Token);
@@ -29,8 +29,8 @@ const api = store => next => action => {
 
     const toFetch = (url, options = {}) => {
         //const baseUrl = 'http://10.0.2.2:8080/' //--> pour emulateur android
-        const baseUrl = 'http://localhost:8080/' // --> Pour browser
-        return fetch(baseUrl + url, myInit)
+        const baseUrl = 'http://127.0.0.1:8080/' // --> Pour browser
+        return fetch( baseUrl + url, myInit)
     }
 
     promise(toFetch)

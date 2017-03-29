@@ -7,10 +7,7 @@ import {sendReq, sendForm} from './action'
 import { Button, Row, Col, Icon, Card } from 'react-materialize';
 
 class EventPage extends React.Component{
-    /*constructor(props){
-        super(props)
-        this.state = {img: null}
-    }*/
+
     state = {
         img: null,
         imgPreviewUrl: null        
@@ -18,7 +15,6 @@ class EventPage extends React.Component{
    
     componentDidMount = () => {
         this.search()
-        this.img.value.reset();
     }
 
     search = () => {
@@ -66,6 +62,7 @@ class EventPage extends React.Component{
     render(){
         // injecte contenu du store 
         const {results} = this.props
+        console.log(this.props)
         const { imgPreviewUrl } = this.state
         let $imagePreview = null;
         if (imgPreviewUrl) {
@@ -131,6 +128,6 @@ class EventPage extends React.Component{
 
 export default connect(
     state => ({
-        results: state.result
+        results: state.events.result
     })
 )(EventPage)

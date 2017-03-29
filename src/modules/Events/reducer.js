@@ -1,17 +1,17 @@
-import {FETCH_SUCCES, FETCH_ERROR, LOCAL_SUCCES} from './action'
+import {FETCH_SUCCESS, FETCH_ERROR, LOCAL_SUCCES} from './action'
 
-const initialState = {
+export const initialState = {
     result: [],
     img: null
 }
-const reducer = (state= initialState, action) => {
+export const reducer = (state= initialState, action) => {
     switch(action.type){
         case FETCH_ERROR:
             return{
                 ...state,
                 query: action.payload
             }
-        case FETCH_SUCCES:
+        case FETCH_SUCCESS:
             return{
                 ...state,
                 result: action.payload
@@ -20,5 +20,4 @@ const reducer = (state= initialState, action) => {
             return state
     }
 }
-
 export default reducer
