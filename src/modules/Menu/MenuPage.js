@@ -17,15 +17,15 @@ class MenuPage extends React.Component {
 
         return(<div className="menu">
             <Link to={'/alerts'}>
-                <ButtonMenu texte={"ALERTS"}/>
+                <ButtonMenu texte={"ALERTS"} icons='ion-android-notifications'/>
             </Link>
 
             <Link to={'/events'}>
-                <ButtonMenu texte={"EVENTS"}/>
+                <ButtonMenu texte={"EVENTS"} icons='ion-android-warning'/>
             </Link>
 
             <Link to={'/messages'}>
-                <ButtonMenu texte={"MESSAGES"}/>
+                <ButtonMenu texte={"MESSAGES"} icons='ion-android-chat'/>
             </Link>
 
         </div>)

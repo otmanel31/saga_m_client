@@ -10,10 +10,24 @@
     box-shadow: 0px 1px 2px 0px #6665cd; 
 }
 
-a ButtonMenu {
-    text-decoration: none;
-}
 
 .menu {
     margin-top: 20px;
+}
+
+.divText {
+    width: 50%;
+    display : inline-block;
+    text-decoration: none;
+    margin-top : 20px;
+    font-family: Georgia, "DejaVu Serif", Norasi, serif;
+
+    
+}
+
+.divIcon {
+    width: 39%;
+    display : inline-block;
+    margin-top : 20px;
+    text-align: right;
 }
