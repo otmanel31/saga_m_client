@@ -58,10 +58,22 @@ class EventPage extends React.Component{
         }
         reader.readAsDataURL(value)
     }
+    onsucces = (imageURI)=>{
+        let reader = new FileReader()
+        reader.onloadend = () => {
+            this.setState({
+                img: value,
+                imgPreviewUrl: reader.result
+            })
+        }
+        reader.readAsDataURL(value)
+    }
+    onFail = (message)=>{
+        alert('failed because: '+ message)
+    }
     handleCam = ()=>{
-        alert(navigator.geolocation.getCurrentPosition())
         //alert(navigator.camera)
-        //navigator.camera.getPicture(onsucces, onFail, {destinationType:Camera.DestinationType.FILE_URI, sourceType:Camera.PictureSourceType.CAMERA})
+        navigator.camera.getPicture(this.onsucces, this.onFail, {destinationType:Camera.DestinationType.FILE_URI, sourceType:Camera.PictureSourceType.CAMERA})
     }
 
     render(){
